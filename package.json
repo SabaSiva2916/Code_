@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js",
-    "allure-report": "allure generate reports --clean && allure open"
+    "test": "cucumber-js --format json:reports/cucumber-report.json",
+    "report": "node generate-html-report.js",
+    "test:html": "npm test && npm run report"
   },
   "keywords": [],
   "author": "",
@@ -13,10 +14,9 @@
   "type": "commonjs",
   "dependencies": {
     "@cucumber/cucumber": "^12.8.2",
-    "@playwright/test": "^1.59.1",
-    "allure-cucumberjs": "^3.7.2"
+    "@playwright/test": "^1.59.1"
   },
   "devDependencies": {
-    "allure-commandline": "^2.38.1"
+    "cucumber-html-reporter": "^7.2.0"
   }
 }

@@ -1,11 +1,7 @@
 module.exports = {
   default: {
-    require: ["step-definitions/**/*.js"],
-    format: [
-      "progress",
-      "json:reports/cucumber-report.json",
-      "allure-cucumberjs/reporter",
-    ],
+    require: ["hooks/**/*.js", "step-definitions/**/*.js"],
+    format: ["progress"],
     formatOptions: {
       snippetInterface: "async-await",
     },

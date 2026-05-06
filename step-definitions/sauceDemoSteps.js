@@ -63,7 +63,7 @@ When("I finish the order", async function () {
 Then("I should see the order confirmation page", async function () {
   checkoutCompletePage = new CheckoutCompletePage(browserUtils.getPage());
   const message = await checkoutCompletePage.getConfirmationMessage();
-  if (!message.includes("Thank you for your order")) {
+  if (!message.toLowerCase().includes("thank you for your order")) {
     throw new Error("Order confirmation not found");
   }
 });

@@ -7,7 +7,8 @@ class LoginPage {
   }
 
   async navigateToLoginPage() {
-    await this.page.goto("https://www.saucedemo.com/");
+    await this.page.goto("https://www.saucedemo.com/", { waitUntil: "load" });
+    await this.page.waitForSelector(this.usernameField, { timeout: 10000 });
   }
 
   async enterUsername(username) {
